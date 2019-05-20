@@ -24,11 +24,12 @@ renderPlanets = () =>  {
 
 handleInputChange = (e) => {
     var updatedList = this.props.planets.slice(0);
+    console.log('updatedList::',updatedList);
     updatedList = updatedList.filter(function(item){
-      return item.toLowerCase().search(
+      return item.name.toLowerCase().search(
         e.target.value.toLowerCase()) !== -1;
     });
-    this.props.handleChange(updatedList);
+    this.props.handle(updatedList);
 }
 
 

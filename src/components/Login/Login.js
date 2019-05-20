@@ -80,6 +80,7 @@ class Logout extends React.Component {
     }
 
     render(){
+        console.log('Props in login::',this.props);
         return (
             <div className="user-details">
                 <p>U r already loggedIn</p>

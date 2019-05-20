@@ -7,7 +7,7 @@ export default function selected(state=initialState , action) {
         case 'PLANET':
             return {...state ,selectedPlanet: action.planet};
         case 'UPDATE':
-        console.log(this.state);
+            console.log(state);
             return {...state , planets: action.val};
         default:
             return state;

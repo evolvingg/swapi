@@ -7,6 +7,7 @@ import {
 	Route,
 	Link
   } from "react-router-dom";
+  //import {IndexLink} from "react-router";
   import { bindActionCreators } from 'redux';
   import { connect } from 'react-redux';
   import * as actionCreators from './actions/index';
@@ -50,7 +51,12 @@ logout = (val) => {
 }
 
 handleChange = (val) => {
-  
+  console.log('updated:',val);
+  //this.props.listupdate(val);
+  // this.setState({
+  //   planets : val
+  // })
+  this.props.listupdate(val);
 }
 
   render() {
@@ -63,23 +69,23 @@ handleChange = (val) => {
     return (
         <div className="App">
           <Router>
-          <Link to="/">
+          <Link to="/" >
             <div className="container">
               <h1 className="title">SWAPI</h1>
             </div>
           </Link>
             <ul className="container grid navbar">
-              <Link to="/" className="col-4" >
+              <Link to="/" className="col-4" activeClassName='active'>
                 <li className="item" >
                   Login
                 </li>
               </Link>
-              <Link to={srp} className="col-4">
+              <Link to={srp} className="col-4" activeClassName='active'>
                 <li className="item">
                   PlanetList
                 </li>
 							</Link>
-              <Link to={plname} className="col-4">
+              <Link to={plname} className="col-4" activeClassName='active'>
                 <li className="item">
                   PlanetDetails
                 </li>
